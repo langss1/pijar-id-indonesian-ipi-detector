@@ -2,10 +2,28 @@
 
 Every number in the paper comes from the scripts below. Run all commands **from the repository root**. CPU is sufficient throughout; no GPU required.
 
+## Tested environment
+
+| | |
+|---|---|
+| Python | 3.11.7 |
+| OS | Windows 11 / Linux (OS-agnostic) |
+| Hardware | **CPU only**, no GPU required |
+| Key pins | scikit-learn 1.9.1 · numpy 1.26.4 · pandas 2.1.3 · torch 2.7.1 (CPU) · transformers 5.17.0 |
+
+Exact versions are pinned in `requirements.txt`.
+
 ```bash
 pip install -r requirements.txt
 export PYTHONIOENCODING=utf-8   # Windows PowerShell: $env:PYTHONIOENCODING="utf-8"
 ```
+
+## One command (fetch → build → evaluate)
+
+```bash
+bash run_all.sh
+```
+This runs Options B.1–B.5 below end to end. For a step-by-step walkthrough, read on.
 
 ## Option A — inspect results without retraining (fastest)
 

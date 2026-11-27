@@ -1,19 +1,27 @@
-# Core (training + evaluation)
-numpy>=1.26,<2.2
-pandas>=2.0
-scikit-learn>=1.3
+# Tested environment (artifact-evaluation reference): Python 3.11.7, CPU-only, Windows 11 / Linux.
+# These are the EXACT versions the paper's numbers were produced with. Pinned for reproducibility.
+# (For a looser install, >= on each line also works; the pins are the authoritative set.)
 
-# Machine-translation augmentation (MarianMT en->id) and the transformer guard baseline
-# CPU-only is sufficient; torch CPU wheel is fine.
-torch>=2.1
-transformers>=4.40
-sentencepiece>=0.1.99      # required by MarianMT tokenizer
+numpy==1.26.4
+pandas==2.1.3
+scikit-learn==1.9.1
+scipy>=1.11
 
-# Embedding baseline (multilingual-e5-small)
-sentence-transformers>=2.2  # optional: only for e5_* baselines in run_detectors.py / fuse.py
+# Machine-translation augmentation (MarianMT en->id) + transformer guard baseline (CPU is enough)
+torch==2.7.1
+transformers==5.17.0
+sentencepiece>=0.1.99          # required by the MarianMT tokenizer
+
+# Model serialization + embedding baseline
+joblib==1.5.1
+sentence-transformers==6.1.0   # only for the e5_* baselines (run_detectors.py / fuse.py)
 
 # Figures
 matplotlib>=3.7
 
-# Fetching public datasets (see expD/data/README.md)
-datasets>=2.14             # optional: HuggingFace datasets loader
+# Public-dataset acquisition (see expD/data/README.md and fetch_data.py)
+datasets>=2.14
+
+# Demo serving backend (optional)
+fastapi>=0.110
+uvicorn>=0.27
