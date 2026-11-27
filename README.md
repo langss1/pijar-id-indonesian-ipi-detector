@@ -100,7 +100,38 @@ where `ρ(d)` = in-vocabulary coverage ratio. Under a language shift EN→ID, ou
 
 The third-party **public** corpora (safe-guard EN train/test, deepset, gandalf, NotInject) are **not** redistributed here. Fetch + rebuild instructions: [`expD/data/README.md`](expD/data/README.md).
 
-## 6. Quick start
+## 6. Prerequisites & installation
+
+**You need:** Python **3.11** (3.10–3.12 OK) and `pip`. CPU only — **no GPU, no internet at inference**.
+Works on Windows 11 and Linux. ~1 GB disk for dependencies (torch CPU + transformers).
+
+```bash
+# 1. clone
+git clone https://github.com/langss1/pijar-id-indonesian-ipi-detector.git
+cd pijar-id-indonesian-ipi-detector
+
+# 2. (recommended) isolated environment
+python -m venv .venv
+# Windows:  .venv\Scriptsctivate      |  Linux/macOS:  source .venv/bin/activate
+
+# 3. install exact tested versions
+pip install -r requirements.txt
+```
+
+**Common install notes**
+- `sentencepiece` is required by the MarianMT tokenizer; it is in `requirements.txt`. On Windows it
+  installs from a wheel (no compiler needed).
+- `torch` installs the **CPU** wheel (`torch==2.7.1`); you do not need CUDA.
+- If a corporate proxy blocks HuggingFace, set `HF_HUB_OFFLINE=1` after the first download.
+
+### Verify the install in 10 seconds (no dataset needed)
+```bash
+python demo/predict.py
+```
+Expected: two injection strings flagged `INJECTED`, two benign ones `BENIGN`, each in <5 ms —
+this confirms the shipped model + code work end to end.
+
+## 6.1 Quick start
 
 ```bash
 pip install -r requirements.txt
