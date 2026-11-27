@@ -1,0 +1,24 @@
+{
+  "fmops/distilbert-prompt-injection": {
+    "lat_ms": 144.52,
+    "en_test_tpr1": 0.017,
+    "en_test_auroc": 0.476,
+    "deepset_tpr1": 0.217,
+    "deepset_auroc": 0.912,
+    "id_test_tpr1": 0.004,
+    "id_test_auroc": 0.424,
+    "notinject_fpr": 0.0,
+    "gandalf_recall": 0.005
+  },
+  "deepset/deberta-v3-base-injection": {
+    "lat_ms": 554.98,
+    "en_test_tpr1": 0.022,
+    "en_test_auroc": 0.665,
+    "deepset_tpr1": 0.367,
+    "deepset_auroc": 0.949,
+    "id_test_tpr1": 0.008,
+    "id_test_auroc": 0.572,
+    "notinject_fpr": 0.012,
+    "gandalf_recall": 0.028
+  }
+}

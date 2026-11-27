@@ -87,3 +87,20 @@ Fusi (word+char+e5) DICOBA tapi DITOLAK: e5/char mengencerkan word yang kuat di 
 | latensi/sampel | 476 ms | < 1 ms (~500x) |
 
 **Kesimpulan iterasi:** detektor TF-IDF CPU murah + augmentasi MT + hard-negative **mengungguli guard transformer produksi di semua sumbu** (adil pada cross-benchmark/ID/over-defense yang sama-sama zero-shot), ~500x lebih cepat. Caveat jujur: in-domain menguntungkan kita (kita latih in-domain, guard zero-shot).
+
+## Gap-fixes (reviewer-hardening, 2026-11-27)
+
+**(1) More baselines (baselines_multi.json).** Two additional zero-shot CPU guards beyond ProtectAI
+DeBERTa-v3: fmops/DistilBERT and deepset/deberta-v3-base-injection. Both collapse on Indonesian
+(id_test AUROC 0.424 and 0.572; TPR@1%FPR <=0.008) and at the strict operating point generally.
+All three production guards lose decisively to PIJAR-ID (id AUROC 0.998). InjecGuard requires
+custom remote code execution and was not run (we cite its published numbers instead).
+
+**(2) Bootstrap 95% CIs (ci.json).** Percentile bootstrap (2000 resamples):
+- en_test   AUROC 1.000 [0.999,1.000]  TPR@1% 0.997 [0.992,1.000]
+- deepset   AUROC 0.968 [0.932,0.994]  TPR@1% 0.767 [0.671,0.968]  (wide; n- = 56)
+- id_test   AUROC 0.998 [0.996,0.999]  TPR@1% 0.948 [0.895,0.992]
+
+**(3) Leakage audit + clean set (id_test_clean.csv).** id_test strings have ZERO overlap with
+training. Removing 20 rows (4%) whose source prompt was shared leaves results unchanged
+(TPR@1%FPR 0.948 -> 0.950; AUROC 0.998), confirming held-out integrity.
