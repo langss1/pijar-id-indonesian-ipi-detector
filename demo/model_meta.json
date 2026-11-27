@@ -1,0 +1,7 @@
+{
+  "name": "PIJAR-ID",
+  "config": "word TF-IDF(1-2gram,sublinear,L2) + LogReg(C=4,balanced)",
+  "train_corpus": "Wrap(train) + Wrap(id_train_aug) + Wrap(hardneg)",
+  "threshold_calibration": "1% FPR on Wrap(en_test)",
+  "n_features": 40000
+}

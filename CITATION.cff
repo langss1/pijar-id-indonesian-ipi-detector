@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use PIJAR-ID, please cite the paper and this repository."
+title: "PIJAR-ID: Indonesian & Code-Mixed Indirect Prompt Injection Detection on CPU"
+authors:
+  - family-names: "Wicaksono"
+    given-names: "Gilang Wasis"
+    affiliation: "Telkom University"
+  - family-names: "Suryani"
+    given-names: "Vera"
+    affiliation: "Telkom University"
+repository-code: "https://github.com/langss1/pijar-id-indonesian-ipi-detector"
+license: MIT
+keywords:
+  - prompt injection
+  - indirect prompt injection
+  - LLM security
+  - Indonesian NLP
+  - code-mixing
+  - guardrails
+  - over-defense
+preferred-citation:
+  type: conference-paper
+  title: "PIJAR-ID: Deteksi Indirect Prompt Injection Bahasa Indonesia dan Campur-Kode di CPU melalui Pemodelan Leksikal yang Diperkuat Augmentasi Terjemahan"
+  authors:
+    - family-names: "Wicaksono"
+      given-names: "Gilang Wasis"
+    - family-names: "Suryani"
+      given-names: "Vera"
+  year: 2026
+  notes: "Under review."
