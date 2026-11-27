@@ -4,6 +4,7 @@
 ![CPU only](https://img.shields.io/badge/runtime-CPU%20only-blue.svg)
 ![Latency](https://img.shields.io/badge/latency-0.53%20ms%2Fsample-brightgreen.svg)
 ![Seeds](https://img.shields.io/badge/eval-5--seed%20(std%20%3C%200.001)-lightgrey.svg)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24577598.svg)](https://doi.org/10.5281/zenodo.24577598)
 
 Reproducibility artifact for the paper:
 
@@ -140,7 +141,7 @@ This artifact is organized for **ACM/IEEE artifact evaluation** and the **FAIR**
 | Committed result ledgers (no rerun needed) | ✅ `expD/results/*.json` (5-seed, std < 0.001) |
 | Open license + machine-readable citation | ✅ `LICENSE` (MIT) + `CITATION.cff` |
 | Serving/demo artifact | ✅ `demo/` (model + API) |
-| **Archival DOI** (persistent, Findable) | ⏳ mint a **Zenodo** DOI — see below |
+| **Archival DOI** (persistent, Findable) | ✅ Zenodo concept DOI [10.5281/zenodo.24577598](https://doi.org/10.5281/zenodo.24577598) (v1.0.0: 10.5281/zenodo.24577600) |
 
 > **To fully satisfy the "Findable/archival" criterion**, link this repo to **Zenodo**
 > (zenodo.org → GitHub integration → enable this repo → create a GitHub Release). Zenodo then
