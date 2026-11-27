@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Large / regenerable artifacts — NOT committed
+expD/data/emb_cache/
+*.npy
+*.npz
+
+# Third-party public datasets must be fetched locally, never committed
+# (see expD/data/README.md). Our own released artifacts are whitelisted below.
+data/raw/
+expD/data/train.csv
+expD/data/en_test.csv
+expD/data/deepset.csv
+expD/data/gandalf.csv
+expD/data/notinject.csv
+
+.DS_Store
+Thumbs.db

@@ -1,0 +1,5 @@
+{
+  "tfidf_lr_e2e_ms": 0.5254,
+  "e5_lr_e2e_ms": 45.1893,
+  "speedup_e5_over_tfidf": 86.0
+}

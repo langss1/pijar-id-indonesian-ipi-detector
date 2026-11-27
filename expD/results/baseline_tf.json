@@ -1,0 +1,15 @@
+{
+  "model": "protectai/deberta-v3-base-prompt-injection-v2",
+  "lat_ms": 476.2,
+  "en_test_tpr1": 0.685,
+  "en_test_tpr5": 0.76,
+  "en_test_auroc": 0.954,
+  "deepset_tpr1": 0.133,
+  "deepset_tpr5": 0.25,
+  "deepset_auroc": 0.741,
+  "id_test_tpr1": 0.104,
+  "id_test_tpr5": 0.26,
+  "id_test_auroc": 0.673,
+  "notinject_fpr": 0.242,
+  "gandalf_recall": 0.88
+}
